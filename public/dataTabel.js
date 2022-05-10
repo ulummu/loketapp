@@ -26,14 +26,13 @@ function ambilData(val) {
 }
 // var nik;
 function dataTabel() {
-  console.log("aku " + pilihLayanan);
   var table = $("#dataDisplay").DataTable({
     lengthChange: false,
     searching: false,
     // processing: true,
     serverSide: true,
     // destroy: true,
-    ajax: "./dashboard/data/" + pilihLayanan + "/",
+    ajax: "./dashboard/data/" + pilihLayanan,
     columns: [
       {
         data: "pengunjung_nik",
