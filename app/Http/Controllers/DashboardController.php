@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Antrian;
-use App\Models\pengunjung;
+use App\Models\Pengunjung;
 use Illuminate\Http\Request;
 use Auth;
 use Redirect;
