@@ -9,7 +9,7 @@ function inputPengunjung() {
       "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
     },
     method: "POST",
-    url: "./pengunjung/tambah/",
+    url: "./pengunjung/tambah",
     dataType: "json",
     data: {
       nik: $("#nik").val(),

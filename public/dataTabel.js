@@ -197,7 +197,6 @@ function tanggalLibur() {
   // });
 }
 $(document).ready(function () {
-  $("#datepicker").multiDatesPicker();
   // code to read selected table row cell data (values).
   $("#dataDisplay").on("click", ".btn-primary", function () {
     $(this).addClass("btn-secondary");
