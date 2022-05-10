@@ -17,7 +17,7 @@
         {{-- <div class="d-flex flex-column flex-md-row pb-3 mb-4 border-bottom"> --}}
           <a href="/" class="d-flex text-dark text-decoration-none ">
             <img src="/img/bpn.png" alt="ATR/BPN Bantul" style="width: 32px; height:32px;" class="me-2"><title>ATR/BPN Bantul</title>
-            <span class="fs-4 d-none d-sm-block">Sistem Antrian&nbsp</span><span class="fs-4">ATR/BPN Kab.Bantul</span>
+            <span class="fs-4 d-none d-sm-block">Sistem Antrian&nbsp</span><span class="fs-4">ATR/BPN Bantul</span>
           </a>
           <button id="navToggler" class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" >
             <span class="toggler-icon top-bar"></span>
