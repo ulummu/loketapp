@@ -213,7 +213,7 @@
   </div>
 </div>
 <footer class="mt-3 border-top">
-  <p class="text-end" style="color: silver">Develop by mh.ulum</p>
+  <p class="text-end" style="color: silver">Develop  by mh.ulum</p>
   {{-- <div class="row">
     <div class="col-12 col-md">
         <small class="d-block mb-3 text-muted">&copy; 2017–2021</small>
