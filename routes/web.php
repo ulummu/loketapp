@@ -44,8 +44,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'loket', 'as' => 'loket.'], 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     // Route::get('/', [LoketController::class, 'index']);
     Route::get('/dashboard/data/{loket}', [DashboardController::class, 'dataTabel']);
-    Route::post('/dashboard/data/update/', [DashboardController::class, 'update']);
-    Route::post('/dashboard/data/panggil/', [DashboardController::class, 'panggil']);
+    Route::post('/dashboard/data/update', [DashboardController::class, 'update']);
+    Route::post('/dashboard/data/panggil', [DashboardController::class, 'panggil']);
 });
 Route::post('/pengunjung/tambah', [LoketController::class, 'store']);
 Route::post('/antrian/pesan', [AntrianController::class, 'store']);

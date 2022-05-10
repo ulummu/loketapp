@@ -103,7 +103,7 @@ function proses(nik) {
       "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
     },
     type: "POST",
-    url: "./dashboard/data/update/",
+    url: "./dashboard/data/update",
     data: {
       nik: nik,
     },
@@ -115,7 +115,7 @@ function panggil(nik) {
       "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
     },
     type: "POST",
-    url: "./dashboard/data/panggil/",
+    url: "./dashboard/data/panggil",
     data: {
       nik: nik,
     },
