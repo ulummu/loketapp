@@ -33,7 +33,7 @@ function dataTabel() {
     // processing: true,
     serverSide: true,
     // destroy: true,
-    ajax: "./dashboard/data/" + pilihLayanan,
+    ajax: "./dashboard/data/" + pilihLayanan + "/",
     columns: [
       {
         data: "pengunjung_nik",

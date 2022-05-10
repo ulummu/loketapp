@@ -43,7 +43,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 Route::group(['middleware' => ['auth'], 'prefix' => 'loket', 'as' => 'loket.'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     // Route::get('/', [LoketController::class, 'index']);
-    Route::get('/dashboard/data/{loket}', [DashboardController::class, 'dataTabel']);
+    Route::get('/dashboard/data/{loket}/', [DashboardController::class, 'dataTabel']);
     Route::post('/dashboard/data/update', [DashboardController::class, 'update']);
     Route::post('/dashboard/data/panggil', [DashboardController::class, 'panggil']);
 });
