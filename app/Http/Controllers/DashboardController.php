@@ -29,7 +29,7 @@ class DashboardController extends Controller
     public function dataTabel($loket)
     {
         $curDate = date("Y-m-d");
-        $data = Antrian::where('loket', $loket)->whereDate('diambil', $curDate)->with('Pengunjung')->get();
+        $data = Antrian::where('loket', $loket)->whereDate('diambil', $curDate)->with('pengunjung')->get();
         // return response()->json($ambidata, 200);
         return DataTables::make($data)->make(true);
     }
