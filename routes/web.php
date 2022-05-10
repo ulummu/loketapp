@@ -48,11 +48,11 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'loket', 'as' => 'loket.'], 
     Route::post('/dashboard/data/panggil/', [DashboardController::class, 'panggil']);
 });
 Route::post('/pengunjung/tambah', [LoketController::class, 'store']);
-Route::post('/antrian/pesan/', [AntrianController::class, 'store']);
-Route::get('/pengunjung/tanggal/', [AntrianController::class, 'realTime']);
-Route::get('/pengunjung/table/', [LoketController::class, 'table']);
-Route::get('/antrian/cetak_pdf/', [AntrianController::class, 'cetak']);
-Route::get('/antrian/cek_antrian/', [AntrianController::class, 'cekAntrian']);
+Route::post('/antrian/pesan', [AntrianController::class, 'store']);
+Route::get('/pengunjung/tanggal', [AntrianController::class, 'realTime']);
+Route::get('/pengunjung/table', [LoketController::class, 'table']);
+Route::get('/antrian/cetak_pdf', [AntrianController::class, 'cetak']);
+Route::get('/antrian/cek_antrian', [AntrianController::class, 'cekAntrian']);
 Route::get('/panel', [PanelController::class, 'index']);
 
 

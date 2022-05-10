@@ -219,7 +219,7 @@ function inputTanggal() {
       "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
     },
     method: "POST",
-    url: "./antrian/pesan/",
+    url: "./antrian/pesan",
     dataType: "json",
     data: {
       nik: getNik,
@@ -319,7 +319,7 @@ function cetakAntri() {
       "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
     },
     method: "GET",
-    url: "./antrian/cetak_pdf/",
+    url: "./antrian/cetak_pdf",
     dataType: "json",
     data: {
       nik: getNik,
@@ -338,7 +338,7 @@ function inputanCek() {
       "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
     },
     method: "GET",
-    url: "./antrian/cek_antrian/",
+    url: "./antrian/cek_antrian",
     dataType: "json",
     data: {
       nik: getNik,
@@ -372,7 +372,7 @@ function ajaxCall() {
       "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
     },
     method: "GET",
-    url: "./pengunjung/tanggal/",
+    url: "./pengunjung/tanggal",
     dataType: "json",
     data: {
       tanggalSekarang: currentDate,
