@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Admin extends Model
 {
-    use HasFactory;
+    // use HasFactory;
     protected $fillable = ['nik', 'nama', 'email', 'password'];
 
     // public function antrian()
