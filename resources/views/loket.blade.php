@@ -72,7 +72,7 @@
             <div class="card-body" onclick="ambilButton(this)" value="C">
               <h3>Loket C</h3>
               <h1 id="loketC" class="card-title" style="font-size: 4rem">{{$antrian['antrianC']}}</h1>
-              <p>Peralihan YBS</p>
+              <p>Peralihan Hak YBS</p>
             </div>
         </div>
       </div>
@@ -81,7 +81,7 @@
           <div class="card-body" onclick="ambilButton(this)" value="D">
               <h3>Loket D</h3>
               <h1 id="loketD" class="card-title" style="font-size: 4rem">{{$antrian['antrianD']}}</h1>
-              <p>Peralihan PPAT</p>
+              <p>Peralihan Hak PPAT</p>
             </div>
         </div>
       </div>
@@ -126,7 +126,7 @@
           <div class="card-body" onclick="ambilButton(this)" value="I">
               <h3>Loket I</h3>
               <h1 id="loketI" class="card-title" style="font-size: 4rem">{{$antrian['antrianI']}}</h1>
-              <p>Pemecahan & Konversi</p>
+              <p>SPS</p>
             </div>
         </div>
       </div>
@@ -135,7 +135,7 @@
             <div class="card-body" onclick="ambilButton(this)" value="J">
               <h3>Loket J</h3>
               <h1 id="loketJ" class="card-title" style="font-size: 4rem">{{$antrian['antrianJ']}}</h1>
-              <p>Korektor Berkas</p>
+              <p>Pemecahan & Konversi</p>
             </div>
           </div>
       </div>
@@ -173,6 +173,9 @@
               
               <button class="w-100 btn btn-lg btn-primary mt-3" onclick="masukkan()" id="tombolPengunjung" type="submit">Login</button>
             </form>
+          </div>
+          <div class="text-center" id="logoBPNCekAntri" style="display: none" >
+            <img src="/img/bpnbig.png" style="height: 140px;width:140px;" class="mb-3" alt="Logo bpn">
           </div>
           <div id="inputanCekAntri" style="display: none; width:15rem;">
             <form id="formCek">

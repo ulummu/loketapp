@@ -254,6 +254,7 @@ function inputTanggal() {
 //     cekAntri();
 // });
 function tapAntri() {
+  var w = document.getElementById("logoBPNCekAntri");
   var x = document.getElementById("dashboardLoket");
   var y = document.getElementById("inputanCekAntri");
   var z = document.getElementById("cardInput");
@@ -261,6 +262,7 @@ function tapAntri() {
     x.style.display = "block";
   } else {
     x.style.display = "none";
+    w.style.display = "block";
     y.style.display = "block";
     z.style.display = "block";
   }
