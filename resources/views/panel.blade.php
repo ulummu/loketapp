@@ -20,7 +20,7 @@
   font-weight: bold;
 }
 .short-div-mid{
-  height: 620px;
+  height: 720px;
   border-bottom: 5px solid grey;
 }
 
@@ -38,13 +38,18 @@
   padding-top: 5px;
   font-weight: bold;
 }
-
-
-h1 {
-    font-size: 8rem;
+.short-div-mid h3 {
+  padding-top:20px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media only screen and (min-width: 600px) {
+h1 {
+    font-size: 15rem;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
     h1 {
         font-size: 6rem;
     }
@@ -63,13 +68,14 @@ h1 {
         align-items: center;
     }
     .short-div-mid h3 {
+        margin-top: 5px;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
     /* For mobile phones: */
     .short-div-mid{
         height: 240px;
@@ -101,39 +107,39 @@ h1 {
             <div class="row">
                 <div class="col-md-3">
                     <div class="short-div" >
-                        <h2 id="loket1"></h2>
+                        <h2 id="loket1">Loket 1</h2>
                         <h1 id="nomor1"></h1>
                     </div>
                     <div class="short-div">
-                        <h2 id="loket2"></h2>
+                        <h2 id="loket2">Loket 2</h2>
                         <h1 id="nomor2"></h1>
                     </div>
                     <div class="short-div">
-                        <h2 id="loket2"></h2>
-                        <h1 id="nomor2"></h1>
+                        <h2 id="loket3">Loket 3</h2>
+                        <h1 id="nomor3"></h1>
                     </div>
                 </div>
                 <div class="col-md-6" >
                     <div class="short-div-mid" >
                         <h3>Antrian Sedang Dipanggil</h3>
-                        <h2 id="loket0">Loket 1</h2>
-                        <h1 id="nomor0">A1</h1>
+                        <h2 id="loket0"></h2>
+                        <h1 id="nomor0"></h1>
                     </div>
                     
                     
                 </div>
                 <div class="col-md-3" >
                     <div class="short-div" >
-                        <h2 id="loket8"></h2>
+                        <h2 id="loket10">Loket 10</h2>
+                        <h1 id="nomor10"></h1>
+                    </div>
+                    <div class="short-div" >
+                        <h2 id="loket9">Loket 9</h2>
+                        <h1 id="nomor9"></h1>
+                    </div>
+                    <div class="short-div" >
+                        <h2 id="loket8">Loket 8</h2>
                         <h1 id="nomor8"></h1>
-                    </div>
-                    <div class="short-div" >
-                        <h2 id="loket7"></h2>
-                        <h1 id="nomor7"></h1>
-                    </div>
-                    <div class="short-div" >
-                        <h2 id="loket7"></h2>
-                        <h1 id="nomor7"></h1>
                     </div>
                     
                 </div>
@@ -141,26 +147,26 @@ h1 {
             <div class="row">
                 <div class="col-md-3">
                     <div class="short-div" >
-                        <h2 id="loket3"></h2>
-                        <h1 id="nomor3"></h1>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="short-div" >
-                        <h2 id="loket4"></h2>
+                        <h2 id="loket4">Loket 4</h2>
                         <h1 id="nomor4"></h1>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="short-div" >
-                        <h2 id="loket5"></h2>
+                        <h2 id="loket5">Loket 5</h2>
                         <h1 id="nomor5"></h1>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="short-div" >
-                        <h2 id="loket6"></h2>
+                        <h2 id="loket6">Loket 6</h2>
                         <h1 id="nomor6"></h1>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="short-div" >
+                        <h2 id="loket7">Loket 7</h2>
+                        <h1 id="nomor7"></h1>
                     </div>
                 </div>
               </div>
