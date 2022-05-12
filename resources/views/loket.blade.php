@@ -5,6 +5,11 @@
 <head>
     <link href="loket.css" rel="stylesheet">
   </head>
+  <style>
+    #loket .card-body{
+      height: 227.22px;
+    }
+  </style>
   <body>
     
     
@@ -171,19 +176,18 @@
                 <label for="password">Nama</label>
               </div>
               
-              <button class="w-100 btn btn-lg btn-primary mt-3" onclick="masukkan()" id="tombolPengunjung" type="submit">Login</button>
+              <button class="btn btn-primary" onclick="masukkan()" id="tombolPengunjung" type="submit">Masukkan</button>
+              <button type="submit" class=" btn btn-success" id="kembali" onclick="window.location.href='/'"  >Kembali</button>
             </form>
-          </div>
-          <div class="text-center" id="logoBPNCekAntri" style="display: none" >
-            <img src="/img/bpnbig.png" style="height: 140px;width:140px;" class="mb-3" alt="Logo bpn">
           </div>
           <div id="inputanCekAntri" style="display: none; width:15rem;">
             <form id="formCek">
               <input type="id" class="form-control" id="nikCek" placeholder="NIK">
-            <div class="errorCek"></div>
-            <button type="submit" class="btn btn-primary mt-3" id="cekAntri_button" onclick="cekAntri()">Submit</button>
-          </form>
-        </div>
+              <div class="errorCek"></div>
+              <button type="submit" class="btn btn-primary mt-3 " id="cekAntri_button" onclick="cekAntri()">Masukkan</button>
+              <button type="submit" class=" btn btn-success mt-3 " id="kembali" onclick="window.location.href='/'"  >Kembali</button>
+            </form>
+          </div>
         <div id="tanggalInput" class="form-tanggal" style="display: none">
           <form id="formTanggal">
           <label>Pilih Tanggal</label>
