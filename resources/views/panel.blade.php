@@ -20,7 +20,7 @@
   font-weight: bold;
 }
 .short-div-mid{
-  height: 480px;
+  height: 620px;
   border-bottom: 5px solid grey;
 }
 
@@ -53,7 +53,8 @@ h1 {
         border-bottom: 5px solid grey;
     }
     .short-div-mid{
-        height: 400px;
+        height: 600px;
+        background-color: red;
         border-bottom: 5px solid grey;
     }
     .short-div-mid h1 {
@@ -98,6 +99,10 @@ h1 {
                         <h2 id="loket2"></h2>
                         <h1 id="nomor2"></h1>
                     </div>
+                    <div class="short-div">
+                        <h2 id="loket2"></h2>
+                        <h1 id="nomor2"></h1>
+                    </div>
                 </div>
                 <div class="col-md-6" >
                     <div class="short-div-mid" >
@@ -111,6 +116,10 @@ h1 {
                     <div class="short-div" >
                         <h2 id="loket8"></h2>
                         <h1 id="nomor8"></h1>
+                    </div>
+                    <div class="short-div" >
+                        <h2 id="loket7"></h2>
+                        <h1 id="nomor7"></h1>
                     </div>
                     <div class="short-div" >
                         <h2 id="loket7"></h2>
