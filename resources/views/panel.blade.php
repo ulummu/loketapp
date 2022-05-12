@@ -25,7 +25,7 @@
 }
 
 .short-div-mid h1 {
-  font-size: 15rem;
+  font-size: 20rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,11 +54,15 @@ h1 {
     }
     .short-div-mid{
         height: 600px;
-        background-color: red;
         border-bottom: 5px solid grey;
     }
     .short-div-mid h1 {
         font-size: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .short-div-mid h3 {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -84,6 +88,11 @@ h1 {
         padding-top: 5px;
         font-weight: bold;
     }
+    .short-div-mid h3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 </style>
     <body>
@@ -106,8 +115,9 @@ h1 {
                 </div>
                 <div class="col-md-6" >
                     <div class="short-div-mid" >
-                        <h2 id="loket0"></h2>
-                        <h1 id="nomor0"></h1>
+                        <h3>Antrian Sedang Dipanggil</h3>
+                        <h2 id="loket0">Loket 1</h2>
+                        <h1 id="nomor0">A1</h1>
                     </div>
                     
                     
