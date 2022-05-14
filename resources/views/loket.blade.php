@@ -5,16 +5,8 @@
 <head>
     <link href="loket.css" rel="stylesheet">
   </head>
-  <style>
-    #loket .card-body{
-      height: 227.22px;
-    }
-  </style>
   <body>
-    
-    
-    
-    <div class="container py-3">
+<div class="container py-3">
   <div id="dashboardLoket">
     <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
@@ -185,7 +177,7 @@
               <input type="id" class="form-control" id="nikCek" placeholder="NIK">
               <div class="errorCek"></div>
               <button type="submit" class="btn btn-primary mt-3 " id="cekAntri_button" onclick="cekAntri()">Masukkan</button>
-              <button type="submit" class=" btn btn-success mt-3 " id="kembali" onclick="window.location.href='/'"  >Kembali</button>
+              <button type="submit" class=" btn btn-success mt-3 " id="kembaliCek" onclick="window.location.href='/'"  >Kembali</button>
             </form>
           </div>
         <div id="tanggalInput" class="form-tanggal" style="display: none">
@@ -193,23 +185,33 @@
           <label>Pilih Tanggal</label>
           <br>
           <div class="form-floating">
-          <input type = "text" id = "datepicker" class="mt-2" style="height: 30px" autofocus>
-          <i class="bi bi-check-circle-fill"></i>
-          <i class="bi bi-exclamation-circle-fill"></i>
-          <small>Error message</small>
-        </div>
+            <input type = "text" id = "datepicker" class="mt-2" style="height: 30px" autofocus>
+            <i class="bi bi-check-circle-fill"></i>
+            <i class="bi bi-exclamation-circle-fill"></i>
+            <small>Error message</small>
+          </div>
           {{-- <br> --}}
           <button type="submit" class="btn btn-primary mt-3" id="tanggalButton" onclick="cardTanggal()">Pilih</button>
+          <button type="submit" class=" btn btn-success mt-3 " id="kembaliCek" onclick="window.location.href='/'"  >Kembali</button>
         </form>
         </div>
-        <div id="suksesAntri" style="display:none">
+        <div id="suksesAntri" style="display:none; width: 320px" >
           <h3>Antrianmu : </h3>
-          <h2 id="pengunjung_nik"></h2>
-          <h1 id="nomorAntri" style="font-size:100px;"></h1>
-          <h2 id="diambil"></h2>
-          <h2 id="namap"></h2>
-          <button onclick="cetakAntri()" class="btn btn-success"><i class="bi bi-download me-1" alt="cetak"></i>Cetak</button>
-          <button class="btn btn-primary" onclick="window.location.href='/'">Kembali</button>
+          <center>
+            <div id="struk-antrian" style="background-color:white;" >
+              <p style="padding-top: 4px;">ATR/BPN<br>Bantul Badan Pertanahan Nasional kab.Bantul
+              </p>
+              <hr>
+              <h2>Nomor Antrian</h2>
+              <h1 id="nomorAntri" style="font-size:100px;"></h1>
+              <h2 id="loketcetak"></h2>
+              <hr>
+              <p id="diambil" style="padding-bottom: 4px;"></p>
+            </div>
+            <button class="btn btn-success" id="cetak"><i class="bi bi-download me-1" alt="cetak" ></i>Cetak</button>
+            <button class="btn btn-primary" onclick="window.location.href='/'">Kembali</button>
+          </center>
+        </div>
           {{-- <form class="form-inline" action="{{ url('/antrian/cetak_pdf/') }}" method="GET">
             <input type="text" class="form-control" name="nik" id="get_nik" hidden></td> --}}
           {{-- </form> --}}
@@ -236,32 +238,20 @@
           <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
         </ul>
       </div>
-      <div class="col-6 col-md">
-        <h5>Resources</h5>
-        <ul class="list-unstyled text-small">
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>About</h5>
-        <ul class="list-unstyled text-small">
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
-        </ul>
-      </div>
-    </div> --}}
+       --}}
   </footer>
 </div>
 
 
 
 </body>
+<script>
+  
+
+
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="../../html2canvas.min.js"></script>
 <script type="text/javascript" src="../../jquery-ui-1.13.1.custom\jquery-ui.min.js"></script>
 <script type="text/javascript" src="{{ URL::asset('../../loket.js') }}"></script>
 </html>

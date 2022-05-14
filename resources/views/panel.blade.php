@@ -46,7 +46,7 @@
 }
 
 h1 {
-    font-size: 15rem;
+    font-size: 10rem;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 900px) {
@@ -78,6 +78,7 @@ h1 {
 @media only screen and (max-width: 600px) {
     /* For mobile phones: */
     .short-div-mid{
+        display: none;
         height: 240px;
         border-bottom: 5px solid grey;
     }

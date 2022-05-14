@@ -95,7 +95,7 @@
               </a>
             </li> --}}
             <li class="nav-item mb-3">
-              <a class="nav-link d-md-none d-lg-block" href="#" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">Log out</a>
+              <a class="nav-link d-md-none d-lg-none" href="#" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">Log out</a>
               <form id="logoutform" action="{{ route('logout') }}" method="POST">
                 {{ csrf_field() }}
               </form>

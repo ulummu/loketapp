@@ -54,6 +54,42 @@ class AntrianController extends Controller
             }
         }
 
+        switch ($request->loket) {
+            case "A":
+                $loketNew = "1";
+                break;
+            case "B":
+                $loketNew = "2";
+                break;
+            case "C":
+                $loketNew = "3";
+                break;
+            case "D":
+                $loketNew = "4";
+                break;
+            case "E":
+                $loketNew = "5";
+                break;
+            case "F":
+                $loketNew = "6";
+                break;
+            case "G":
+                $loketNew = "7";
+                break;
+            case "H":
+                $loketNew = "8";
+                break;
+            case "I":
+                $loketNew = "9";
+                break;
+            case "J":
+                $loketNew = "10";
+                break;
+
+            default:
+                $loketNew = "ra masuk";
+                break;
+        }
 
         // print_r($banyakAntrian->pengunjung->nik);
         // die();
@@ -64,6 +100,7 @@ class AntrianController extends Controller
             'diambil'     => $newTanggal,
             'nomorAntri' => $antrianNew,
             'banyakAntrian' => $banyakAntrian,
+            'loket' => $loketNew
         ];
 
         // print_r($nama);
@@ -100,12 +137,50 @@ class AntrianController extends Controller
         $diambilCek = Antrian::select('diambil')->where('pengunjung_nik', $request->nik)->value('diambil');
         $newDiambil = date("d M Y", strtotime($diambilCek));
 
+        switch ($cek->loket) {
+            case "A":
+                $loketNew = "1";
+                break;
+            case "B":
+                $loketNew = "2";
+                break;
+            case "C":
+                $loketNew = "3";
+                break;
+            case "D":
+                $loketNew = "4";
+                break;
+            case "E":
+                $loketNew = "5";
+                break;
+            case "F":
+                $loketNew = "6";
+                break;
+            case "G":
+                $loketNew = "7";
+                break;
+            case "H":
+                $loketNew = "8";
+                break;
+            case "I":
+                $loketNew = "9";
+                break;
+            case "J":
+                $loketNew = "10";
+                break;
+
+            default:
+                $loketNew = "ra masuk";
+                break;
+        }
+
         $data = [
             'pengunjung_nik'    => $cek->pengunjung_nik,
             'nama' => $cek->pengunjung->nama,
             'diambil'     => $newDiambil,
             'nomorAntri' => $cek->nomorAntri,
             'loket' => $cek->loket,
+            'loketnew' => $loketNew,
         ];
         // print_r($cek);
         return response()->json($data, 200);
@@ -162,7 +237,8 @@ class AntrianController extends Controller
             'loket' => $data->loket,
             'loketNew' => $loketNew
         ];
-        $pdf = PDF::loadview('antriCetak', ['show' => $show])->setOptions(['defaultFont' => 'sans-serif', 'Arial', 'Helvetica']);
-        return $pdf->download('Antrian_' . $request->nik . '.pdf');
+        // $pdf = PDF::loadview('antriCetak', ['show' => $show])->setOptions(['defaultFont' => 'sans-serif', 'Arial', 'Helvetica']);
+        // return $pdf->download('Antrian_' . $request->nik . '.pdf');
+        return response()->json($show, 200);
     }
 }

@@ -93,7 +93,7 @@ function dataTabel() {
   });
   setInterval(function () {
     $("#dataDisplay").DataTable().ajax.reload();
-  }, 2000);
+  }, 10000);
 }
 
 function proses(nik) {

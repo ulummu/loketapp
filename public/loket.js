@@ -1,5 +1,29 @@
 var getNik = "";
 var getNama = "";
+
+function capture() {
+  const captureElement = document.querySelector("#struk-antrian");
+  html2canvas(captureElement)
+    .then((canvas) => {
+      canvas.style.display = "none";
+      document.body.appendChild(canvas);
+      return canvas;
+    })
+    .then((canvas) => {
+      const image = canvas
+        .toDataURL("image/png")
+        .replace("image/png", "image/octet-stream");
+      const a = document.createElement("a");
+      a.setAttribute("download", "antrian_" + getNik + ".png");
+      a.setAttribute("href", image);
+      a.click();
+      canvas.remove();
+    });
+}
+
+const btn = document.querySelector("#cetak");
+btn.addEventListener("click", capture);
+
 function inputPengunjung() {
   getNik = $("#nik").val();
   getNama = $("#nama").val();
@@ -159,8 +183,9 @@ $("#datepicker").datepicker({
   beforeShowDay: function (date) {
     var dayOfWeek = date.getDay();
     // 0 : Sunday, 1 : Monday, ...
-    if (dayOfWeek == 0 || dayOfWeek == 6) return [false];
-    else return [true];
+    // if (dayOfWeek == 0 || dayOfWeek == 6) return [false];
+    // else
+    return [true];
   },
 });
 
@@ -237,6 +262,7 @@ function inputTanggal() {
       $("#nomorAntri").text(pilihLayanan + data.nomorAntri);
       $("#diambil").text(tanggal + " " + bulanNew + " " + tahun);
       $("#namap").text(data.nama);
+      $("#loketcetak").text("Layanan : Loket " + data.loket);
       $("#judulIsi").hide();
     },
     error: function (data) {
@@ -276,6 +302,8 @@ function cekAntri() {
   let nik = id("nikCek"),
     form = id("formCek"),
     tombol = id("cekAntri_button");
+  inputan = id("inputanCekAntri");
+  tombol_kembali = id("kembaliCek");
   errorMsg = classes("errorCek");
 
   // console.log(nama.value);
@@ -293,6 +321,8 @@ function cekAntri() {
       inputanCek();
       nik.style.display = "none";
       tombol.style.display = "none";
+      tombol_kembali.style.display = "none";
+      inputan.style.display = "none";
     }
 
     // if (nama.value.length != 0 && nik.value.length == 16) {
@@ -317,26 +347,25 @@ function cekAntri() {
 }
 
 // getDate = $("#datepicker").val();
-function cetakAntri() {
-  $.ajax({
-    headers: {
-      "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
-    },
-    method: "GET",
-    url: "./antrian/cetak_pdf",
-    dataType: "json",
-    data: {
-      nik: getNik,
-      loket: pilihLayanan,
-      // tanggal: $("#datepicker").val(),
-    },
-    success: function (data) {},
-  });
-}
+// function cetakAntri() {
+//   $.ajax({
+//     headers: {
+//       "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+//     },
+//     method: "GET",
+//     url: "./antrian/cetak_pdf",
+//     dataType: "json",
+//     data: {
+//       nik: getNik,
+//       loket: pilihLayanan,
+//       // tanggal: $("#datepicker").val(),
+//     },
+//     success: function (data) {},
+//   });
+// }
 var getNikCek = "";
 function inputanCek() {
   getNik = $("#nikCek").val();
-  console.log(getNikCek);
   $.ajax({
     headers: {
       "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
@@ -350,14 +379,12 @@ function inputanCek() {
     },
     success: function (data) {
       $("#nik").val(getNik);
-      $("#datepicker").val("");
-      $("#tanggalInput").hide();
       $("#suksesAntri").show();
       $("#pengunjung_nik").text(data.pengunjung_nik);
       $("#nomorAntri").text(data.loket + data.nomorAntri);
       $("#diambil").text(data.diambil);
-      $("#namap").text(data.nama);
-      $("#get_nik").val(getNik);
+      $("#loketcetak").text("Layanan : Loket " + data.loketnew);
+      // $("#get_nik").val(getNik);
       $("#judulIsi").hide();
     },
     error: function (data) {
@@ -395,6 +422,51 @@ function ajaxCall() {
     },
   });
 }
+
+// $(document).ready(function() {
+
+//   // Global variable
+//   var element = $("#struk-antrian");
+
+//   // Global variable
+//   var getCanvas;
+//   $("#btn-Convert-Html2Image").on('click', function() {
+//       var imgageData =
+//           getCanvas.toDataURL("image/png",1);
+
+//       // Now browser starts downloading
+//       // it instead of just showing it
+//       var newData = imgageData.replace(
+//       /^data:image\/png/, "data:application/octet-stream");
+
+//       $("#btn-Convert-Html2Image").attr(
+//       "download", "SistemITImage.png").attr(
+//       "href", newData);
+//   });
+// });
+
+// function capture() {
+//   const captureElement = document.querySelector("#struk-antrian");
+//   html2canvas(captureElement)
+//     .then((canvas) => {
+//       canvas.style.display = "none";
+//       document.body.appendChild(canvas);
+//       return canvas;
+//     })
+//     .then((canvas) => {
+//       const image = canvas
+//         .toDataURL("image/png")
+//         .replace("image/png", "image/octet-stream");
+//       const a = document.createElement("a");
+//       a.setAttribute("download", "antrian_" + getNik + ".png");
+//       a.setAttribute("href", image);
+//       a.click();
+//       canvas.remove();
+//     });
+// }
+
+// const btn = document.querySelector("#cetak");
+// btn.addEventListener("click", capture);
 
 function contoh() {
   swal({

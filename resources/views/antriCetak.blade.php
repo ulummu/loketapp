@@ -28,15 +28,17 @@ p {
 <body>
     
     <center>
-        <p>ATR/BPN Bantul</p>
-        <p>Badan Pertanahan Nasional kab.Bantul</p>
-        <hr style="width: 41%;">
-        {{-- <h2 id="pengunjung_nikCetak" >{{$show['pengunjung_nik']}}</h2> --}}
-        <h2>Nomor Antrian</h2>
-        <h1 id="nomorAntriCetak" style="font-size:100px;">{{$show['loket']}}{{$show['nomorAntri']}}</h1>
-        <h2>Layanan : Loket {{$show['loketNew']}}</h2>
-        <hr style="width: 41%;">
-        <p id="diambilCetak" >{{$show['diambil']}}</p>
+        <div id="struk-antrian">
+            <p>ATR/BPN Bantul</p>
+            <p>Badan Pertanahan Nasional kab.Bantul</p>
+            <hr style="width: 41%;">
+            {{-- <h2 id="pengunjung_nikCetak" >{{$show['pengunjung_nik']}}</h2> --}}
+            <h2>Nomor Antrian</h2>
+            <h1 id="nomorAntriCetak" style="font-size:100px;">{{$show['loket']}}{{$show['nomorAntri']}}</h1>
+            <h2>Layanan : Loket {{$show['loketNew']}}</h2>
+            <hr style="width: 41%;">
+            <p id="diambilCetak" >{{$show['diambil']}}</p>
+        </div>
         {{-- <h4 id="namapCetak" >{{$show['nama']}}</h4> --}}
     </center>
     {{-- @endforeach --}}
