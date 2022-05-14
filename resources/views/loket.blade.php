@@ -195,7 +195,7 @@
           <button type="submit" class=" btn btn-success mt-3 " id="kembaliCek" onclick="window.location.href='/'"  >Kembali</button>
         </form>
         </div>
-        <div id="suksesAntri" style="display:none; width: 320px" >
+        <div id="suksesAntri" style="display:none;" >
           <h3>Antrianmu : </h3>
           <center>
             <div id="struk-antrian" style="background-color:white;" >
@@ -217,7 +217,7 @@
           {{-- </form> --}}
         </div>
       </div>
-      </div>
+    </div>
     {{-- </div> --}}
   </div>
 </div>
