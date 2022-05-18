@@ -198,7 +198,7 @@
         <div id="suksesAntri" style="display:none;" >
           <h3>Antrianmu : </h3>
           <center>
-            <div id="struk-antrian" style="background-color:white;" >
+            <div id="struk-antrian" class="mb-2" style="background-color:white;" >
               <p style="padding-top: 4px;">ATR/BPN<br>Bantul Badan Pertanahan Nasional kab.Bantul
               </p>
               <hr>

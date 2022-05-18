@@ -7,45 +7,88 @@ setInterval(function () {
     url: "./panel",
     dataType: "json",
     success: function (data) {
-      // console.log(data[].loket);
       $("#loket0").text("Loket " + convertLoket(data[0].loket));
       $("#nomor0").text(data[0].loket + data[0].nomorAntri);
-      // for (let x = 0; x <= data.length; x++) {
-      switch (data[0].loket) {
-        case "A":
-          $("#nomor1").text(data[0].loket + data[0].nomorAntri);
-          break;
-        case "B":
-          $("#nomor2").text(data[0].loket + data[0].nomorAntri);
-          break;
-        case "C":
-          $("#nomor3").text(data[0].loket + data[0].nomorAntri);
-          break;
-        case "D":
-          $("#nomor4").text(data[0].loket + data[0].nomorAntri);
-          break;
-        case "E":
-          $("#nomor5").text(data[0].loket + data[0].nomorAntri);
-          break;
-        case "F":
-          $("#nomor6").text(data[0].loket + data[0].nomorAntri);
-          break;
-        case "G":
-          $("#nomor7").text(data[0].loket + data[0].nomorAntri);
-          break;
-        case "H":
-          $("#nomor8").text(data[0].loket + data[0].nomorAntri);
-          break;
-        case "I":
-          $("#nomor9").text(data[0].loket + data[0].nomorAntri);
-          break;
-        case "J":
-          $("#nomor10").text(data[0].loket + data[0].nomorAntri);
-          break;
-        default:
-          text = "ra masuk";
-          break;
+      var stack = [];
+      for (let i = 0; i < data.length; i++) {
+        stack.push(data[i].loket + data[i].nomorAntri);
+        var x = stack.shift();
+        console.log(i + x);
+        switch (x.slice(0, 1)) {
+          case "A":
+            $("#nomor1").text(x);
+            break;
+          case "B":
+            $("#nomor2").text(x);
+            break;
+          case "C":
+            $("#nomor3").text(x);
+            break;
+          case "D":
+            $("#nomor4").text(x);
+            break;
+          case "E":
+            $("#nomor5").text(x);
+            break;
+          case "F":
+            $("#nomor6").text(x);
+            break;
+          case "G":
+            $("#nomor7").text(x);
+            break;
+          case "H":
+            $("#nomor8").text(x);
+            break;
+          case "I":
+            $("#nomor9").text(x);
+            break;
+          case "J":
+            $("#nomor10").text(x);
+            break;
+          default:
+            text = "ra masuk";
+            break;
+        }
       }
+      // console.log(data[].loket);
+      // $("#loket0").text("Loket " + convertLoket(data[0].loket));
+      // $("#nomor0").text(data[0].loket + data[0].nomorAntri);
+      // for (let x = 0; x < data.length; x++) {
+      // switch (data[0].loket) {
+      //   case "A":
+      //     $("#nomor1").text(data[0].loket + data[0].nomorAntri);
+      //     break;
+      //   case "B":
+      //     $("#nomor2").text(data[0].loket + data[0].nomorAntri);
+      //     break;
+      //   case "C":
+      //     $("#nomor3").text(data[0].loket + data[0].nomorAntri);
+      //     break;
+      //   case "D":
+      //     $("#nomor4").text(data[0].loket + data[0].nomorAntri);
+      //     break;
+      //   case "E":
+      //     $("#nomor5").text(data[0].loket + data[0].nomorAntri);
+      //     break;
+      //   case "F":
+      //     $("#nomor6").text(data[0].loket + data[0].nomorAntri);
+      //     break;
+      //   case "G":
+      //     $("#nomor7").text(data[0].loket + data[0].nomorAntri);
+      //     break;
+      //   case "H":
+      //     $("#nomor8").text(data[0].loket + data[0].nomorAntri);
+      //     break;
+      //   case "I":
+      //     $("#nomor9").text(data[0].loket + data[0].nomorAntri);
+      //     break;
+      //   case "J":
+      //     $("#nomor10").text(data[0].loket + data[0].nomorAntri);
+      //     break;
+      //   default:
+      //     text = "ra masuk";
+      //     break;
+      // }
       // if (x == data.length) {
       //   x = 0;
       // }
@@ -70,7 +113,7 @@ setInterval(function () {
       // $("#nomor8").text(data[8].loket + data[8].nomorAntri);
     },
   });
-}, 2000);
+}, 5000);
 
 function convertLoket(x) {
   switch (x) {
