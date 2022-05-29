@@ -39,8 +39,8 @@
     
     <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
       <h1 class="display-5 fw-normal">Jumlah Antrian Besok</h1>
-      <p class="fs-6 text-muted">Kantor Pertanahan Kabupaten Bantul melayani kepengurusan tanah setiap hari senin-jumat mulai pukul 08.00-16.00. Silakan ambil antrian sesuai dengan perihal yang akan dilakukan pengurusan. Setelah memiliki nomor antrian diharapkan datang 30 menit sebelum antrian anda dipanggil. Anda dapat memantau antrian anda melalui fitur Panel diatas</p>
-      <a class="me-3 py-2  text-decoration-none" href="javascript:void(0)" onclick="return tapAntri()">Cek Antrianmu</a>
+      <p class="fs-6 text-muted">Kantor Pertanahan Kabupaten Bantul melayani kepengurusan tanah setiap hari senin-jumat mulai pukul 08.00-16.00. Silakan ambil antrian sesuai dengan perihal yang akan dilakukan pengurusan. Setelah memiliki nomor antrian diharapkan datang 30 menit sebelum antrian anda dipanggil. Anda dapat memantau antrian anda melalui fitur Panel diatas.</p>
+      <p class="mt-2 text-muted">Sudah memiliki antrian? <a class="me-3 py-2  text-decoration-none" href="javascript:void(0)" onclick="return tapAntri()">Cek Antrianmu</a></p>
     </div>
   </header>
   

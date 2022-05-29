@@ -1,3 +1,6 @@
+function cekloket(x) {
+  return "masuk";
+}
 setInterval(function () {
   $.ajax({
     headers: {
@@ -6,111 +9,18 @@ setInterval(function () {
     method: "GET",
     url: "./panel",
     dataType: "json",
-    success: function (data) {
-      $("#loket0").text("Loket " + convertLoket(data[0].loket));
-      $("#nomor0").text(data[0].loket + data[0].nomorAntri);
-      var stack = [];
-      for (let i = 0; i < data.length; i++) {
-        stack.push(data[i].loket + data[i].nomorAntri);
-        var x = stack.shift();
-        console.log(i + x);
-        switch (x.slice(0, 1)) {
-          case "A":
-            $("#nomor1").text(x);
-            break;
-          case "B":
-            $("#nomor2").text(x);
-            break;
-          case "C":
-            $("#nomor3").text(x);
-            break;
-          case "D":
-            $("#nomor4").text(x);
-            break;
-          case "E":
-            $("#nomor5").text(x);
-            break;
-          case "F":
-            $("#nomor6").text(x);
-            break;
-          case "G":
-            $("#nomor7").text(x);
-            break;
-          case "H":
-            $("#nomor8").text(x);
-            break;
-          case "I":
-            $("#nomor9").text(x);
-            break;
-          case "J":
-            $("#nomor10").text(x);
-            break;
-          default:
-            text = "ra masuk";
-            break;
-        }
-      }
-      // console.log(data[].loket);
-      // $("#loket0").text("Loket " + convertLoket(data[0].loket));
-      // $("#nomor0").text(data[0].loket + data[0].nomorAntri);
-      // for (let x = 0; x < data.length; x++) {
-      // switch (data[0].loket) {
-      //   case "A":
-      //     $("#nomor1").text(data[0].loket + data[0].nomorAntri);
-      //     break;
-      //   case "B":
-      //     $("#nomor2").text(data[0].loket + data[0].nomorAntri);
-      //     break;
-      //   case "C":
-      //     $("#nomor3").text(data[0].loket + data[0].nomorAntri);
-      //     break;
-      //   case "D":
-      //     $("#nomor4").text(data[0].loket + data[0].nomorAntri);
-      //     break;
-      //   case "E":
-      //     $("#nomor5").text(data[0].loket + data[0].nomorAntri);
-      //     break;
-      //   case "F":
-      //     $("#nomor6").text(data[0].loket + data[0].nomorAntri);
-      //     break;
-      //   case "G":
-      //     $("#nomor7").text(data[0].loket + data[0].nomorAntri);
-      //     break;
-      //   case "H":
-      //     $("#nomor8").text(data[0].loket + data[0].nomorAntri);
-      //     break;
-      //   case "I":
-      //     $("#nomor9").text(data[0].loket + data[0].nomorAntri);
-      //     break;
-      //   case "J":
-      //     $("#nomor10").text(data[0].loket + data[0].nomorAntri);
-      //     break;
-      //   default:
-      //     text = "ra masuk";
-      //     break;
-      // }
-      // if (x == data.length) {
-      //   x = 0;
-      // }
-      // }
-
-      // $("#loket0").text("Loket " + convertLoket(data[0].loket));
-      // $("#nomor0").text(data[0].loket + data[0].nomorAntri);
-      // $("#nomor1").text(setNomer(convertLoket(data[1].loket)));
-      // $("#loket2").text("Loket " + convertLoket(data[2].loket));
-      // $("#nomor2").text(data[2].loket + data[2].nomorAntri);
-      // $("#loket3").text("Loket " + convertLoket(data[3].loket));
-      // $("#nomor3").text(data[3].loket + data[3].nomorAntri);
-      // $("#loket4").text("Loket " + convertLoket(data[4].loket));
-      // $("#nomor4").text(data[4].loket + data[4].nomorAntri);
-      // $("#loket5").text("Loket " + convertLoket(data[5].loket));
-      // $("#nomor5").text(data[5].loket + data[5].nomorAntri);
-      // $("#loket6").text("Loket " + convertLoket(data[6].loket));
-      // $("#nomor6").text(data[6].loket + data[6].nomorAntri);
-      // $("#loket7").text("Loket " + convertLoket(data[7].loket));
-      // $("#nomor7").text(data[7].loket + data[7].nomorAntri);
-      // $("#loket8").text("Loket " + convertLoket(data[8].loket));
-      // $("#nomor8").text(data[8].loket + data[8].nomorAntri);
+    success: function (res) {
+      $("#nomor0").text(res.loket0.loket + res.loket0.nomorAntri);
+      $("#nomor1").text("A" + res.loketA.nomorAntri);
+      $("#nomor2").text("B" + res.loketB.nomorAntri);
+      $("#nomor3").text("C" + res.loketC.nomorAntri);
+      $("#nomor4").text("D" + res.loketD.nomorAntri);
+      $("#nomor5").text("E" + res.loketE.nomorAntri);
+      $("#nomor6").text("F" + res.loketF.nomorAntri);
+      $("#nomor7").text("G" + res.loketG.nomorAntri);
+      $("#nomor8").text("H" + res.loketH.nomorAntri);
+      $("#nomor9").text("I" + res.loketI.nomorAntri);
+      $("#nomor10").text("J" + res.loketJ.nomorAntri);
     },
   });
 }, 5000);
