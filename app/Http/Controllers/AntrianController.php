@@ -16,26 +16,6 @@ class AntrianController extends Controller
     private $getData = "";
     public function index()
     {
-        // $convDate = $_REQUEST['tanggalSekarang'];
-        // $curDate = date("Y-m-d");
-        // $tomorrow = strtotime("+1 day");
-        // $tomorrowDate = date("Y-m-d", $tomorrow);
-        // $yesterday = strtotime("-1 day");
-        // $yesterdayDate = date("Y-m-d", $yesterday);
-        // // print_r($tomorrowDate);
-
-        // // if ($curDate < $tomorrowDate) {
-        // $ambilNik = DB::table('antrians')->whereDate('diambil', '<', $curDate)->pluck('pengunjung_nik')->all();
-        // $deleted = DB::table('pengunjungs')->whereIn('nik', $ambilNik)->delete();
-        // $ambilPengunjung = Pengunjung::pluck('nik')->all();
-        // foreach ($ambilPengunjung as $k => $val) {
-        //     $cekAntrian = DB::table('antrians')->where('pengunjung_nik', $val)->first();
-        //     if (empty($cekAntrian)) {
-        //         DB::table('pengunjungs')->where('nik', $val)->delete();
-        //     }
-        // }
-        // print_r($ambilPengunjung);
-        // return response()->json(200);
         return view('loket', "masuk");
     }
     public function store(Request $request)

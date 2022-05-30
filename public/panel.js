@@ -11,16 +11,16 @@ setInterval(function () {
     dataType: "json",
     success: function (res) {
       $("#nomor0").text(res.loket0.loket + res.loket0.nomorAntri);
-      $("#nomor1").text("A" + res.loketA.nomorAntri);
-      $("#nomor2").text("B" + res.loketB.nomorAntri);
-      $("#nomor3").text("C" + res.loketC.nomorAntri);
-      $("#nomor4").text("D" + res.loketD.nomorAntri);
-      $("#nomor5").text("E" + res.loketE.nomorAntri);
-      $("#nomor6").text("F" + res.loketF.nomorAntri);
-      $("#nomor7").text("G" + res.loketG.nomorAntri);
-      $("#nomor8").text("H" + res.loketH.nomorAntri);
-      $("#nomor9").text("I" + res.loketI.nomorAntri);
-      $("#nomor10").text("J" + res.loketJ.nomorAntri);
+      $("#nomor1").text(res.loketA);
+      $("#nomor2").text(res.loketB);
+      $("#nomor3").text(res.loketC);
+      $("#nomor4").text(res.loketD);
+      $("#nomor5").text(res.loketE);
+      $("#nomor6").text(res.loketF);
+      $("#nomor7").text(res.loketG);
+      $("#nomor8").text(res.loketH);
+      $("#nomor9").text(res.loketI);
+      $("#nomor10").text(res.loketJ);
     },
   });
 }, 5000);

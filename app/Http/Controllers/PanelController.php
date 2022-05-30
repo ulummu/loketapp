@@ -21,19 +21,69 @@ class PanelController extends Controller
         $loketH = Antrian::where('panggil', 1)->where('loket', 'H')->orderBy('updated_at', 'desc')->first();
         $loketI = Antrian::where('panggil', 1)->where('loket', 'I')->orderBy('updated_at', 'desc')->first();
         $loketJ = Antrian::where('panggil', 1)->where('loket', 'J')->orderBy('updated_at', 'desc')->first();
+        if (empty($loketA)) {
+            $lokA = "-";
+        } else {
+            $lokA = $loketA->loket .= $loketA->nomorAntri;
+        }
+        if (empty($loketB)) {
+            $lokB = "-";
+        } else {
+            $lokB = $loketB->loket .= $loketB->nomorAntri;
+        }
+        if (empty($loketC)) {
+            $lokC = "-";
+        } else {
+            $lokC = $loketC->loket .= $loketC->nomorAntri;
+        }
+        if (empty($loketD)) {
+            $lokD = "-";
+        } else {
+            $lokD = $loketD->loket .= $loketD->nomorAntri;
+        }
+        if (empty($loketE)) {
+            $lokE = "-";
+        } else {
+            $lokE = $loketE->loket .= $loketE->nomorAntri;
+        }
+        if (empty($loketF)) {
+            $lokF = "-";
+        } else {
+            $lokF = $loketF->loket .= $loketF->nomorAntri;
+        }
+        if (empty($loketG)) {
+            $lokG = "-";
+        } else {
+            $lokG = $loketG->loket .= $loketG->nomorAntri;
+        }
+        if (empty($loketH)) {
+            $lokH = "-";
+        } else {
+            $lokH = $loketH->loket .= $loketH->nomorAntri;
+        }
+        if (empty($loketI)) {
+            $lokI = "-";
+        } else {
+            $lokI = $loketI->loket .= $loketI->nomorAntri;
+        }
+        if (empty($loketJ)) {
+            $lokJ = "-";
+        } else {
+            $lokJ = $loketJ->loket .= $loketJ->nomorAntri;
+        }
         if ($request->ajax()) {
             return response()->json($data = [
                 'loket0' => $loket0,
-                'loketA' => $loketA,
-                'loketB' => $loketB,
-                'loketC' => $loketC,
-                'loketD' => $loketD,
-                'loketE' => $loketE,
-                'loketF' => $loketF,
-                'loketG' => $loketG,
-                'loketH' => $loketH,
-                'loketI' => $loketI,
-                'loketJ' => $loketJ,
+                'loketA' => $lokA,
+                'loketB' => $lokB,
+                'loketC' => $lokC,
+                'loketD' => $lokD,
+                'loketE' => $lokE,
+                'loketF' => $lokF,
+                'loketG' => $lokG,
+                'loketH' => $lokH,
+                'loketI' => $lokI,
+                'loketJ' => $lokJ,
 
             ], 200);
         }
