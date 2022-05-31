@@ -21,59 +21,64 @@ class PanelController extends Controller
         $loketH = Antrian::where('panggil', 1)->where('loket', 'H')->orderBy('updated_at', 'desc')->first();
         $loketI = Antrian::where('panggil', 1)->where('loket', 'I')->orderBy('updated_at', 'desc')->first();
         $loketJ = Antrian::where('panggil', 1)->where('loket', 'J')->orderBy('updated_at', 'desc')->first();
+        if (empty($loket0)) {
+            $lok0 = " ";
+        } else {
+            $lok0 = $loket0->loket .= $loket0->nomorAntri;
+        }
         if (empty($loketA)) {
-            $lokA = "-";
+            $lokA = " ";
         } else {
             $lokA = $loketA->loket .= $loketA->nomorAntri;
         }
         if (empty($loketB)) {
-            $lokB = "-";
+            $lokB = " ";
         } else {
             $lokB = $loketB->loket .= $loketB->nomorAntri;
         }
         if (empty($loketC)) {
-            $lokC = "-";
+            $lokC = " ";
         } else {
             $lokC = $loketC->loket .= $loketC->nomorAntri;
         }
         if (empty($loketD)) {
-            $lokD = "-";
+            $lokD = " ";
         } else {
             $lokD = $loketD->loket .= $loketD->nomorAntri;
         }
         if (empty($loketE)) {
-            $lokE = "-";
+            $lokE = " ";
         } else {
             $lokE = $loketE->loket .= $loketE->nomorAntri;
         }
         if (empty($loketF)) {
-            $lokF = "-";
+            $lokF = " ";
         } else {
             $lokF = $loketF->loket .= $loketF->nomorAntri;
         }
         if (empty($loketG)) {
-            $lokG = "-";
+            $lokG = " ";
         } else {
             $lokG = $loketG->loket .= $loketG->nomorAntri;
         }
         if (empty($loketH)) {
-            $lokH = "-";
+            $lokH = " ";
         } else {
             $lokH = $loketH->loket .= $loketH->nomorAntri;
         }
         if (empty($loketI)) {
-            $lokI = "-";
+            $lokI = " ";
         } else {
             $lokI = $loketI->loket .= $loketI->nomorAntri;
         }
         if (empty($loketJ)) {
-            $lokJ = "-";
+            $lokJ = " ";
         } else {
             $lokJ = $loketJ->loket .= $loketJ->nomorAntri;
         }
         if ($request->ajax()) {
             return response()->json($data = [
-                'loket0' => $loket0,
+                'loket0' => $lok0,
                 'loketA' => $lokA,
                 'loketB' => $lokB,
                 'loketC' => $lokC,

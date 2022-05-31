@@ -10,7 +10,7 @@ setInterval(function () {
     url: "./panel",
     dataType: "json",
     success: function (res) {
-      $("#nomor0").text(res.loket0.loket + res.loket0.nomorAntri);
+      $("#nomor0").text(res.loket0);
       $("#nomor1").text(res.loketA);
       $("#nomor2").text(res.loketB);
       $("#nomor3").text(res.loketC);
