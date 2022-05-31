@@ -20,10 +20,15 @@ class AntrianController extends Controller
     }
     public function store(Request $request)
     {
+        $savePengunjung = new Pengunjung;
+        $savePengunjung->nik = $request->nik;
+        $savePengunjung->nama = $request->nama;
+        $savePengunjung->save();
+
+
         $changeDate = strtr($_REQUEST['tanggal'], '/', '-');
         $newTanggal = date("Y-m-d", strtotime($changeDate));
         $namaPengunjung = DB::table('pengunjungs')->select('nama')->where('nik', $request->nik)->value('nama');
-
         $banyakAntrian = DB::table('antrians')->where('loket', $request->loket)
             ->whereDate('diambil', $newTanggal)
             ->orderBy('created_at', 'DESC')
@@ -117,18 +122,72 @@ class AntrianController extends Controller
         $yesterdayDate = date("Y-m-d", $yesterday);
         // print_r($tomorrowDate);
 
-        // if ($curDate < $tomorrowDate) {
-        $ambilNik = DB::table('antrians')->whereDate('diambil', '<', $curDate)->pluck('pengunjung_nik')->all();
-        $deleted = DB::table('pengunjungs')->whereIn('nik', $ambilNik)->delete();
-        $ambilPengunjung = Pengunjung::pluck('nik')->all();
-        foreach ($ambilPengunjung as $k => $val) {
-            $cekAntrian = DB::table('antrians')->where('pengunjung_nik', $val)->first();
-            if (empty($cekAntrian)) {
-                DB::table('pengunjungs')->where('nik', $val)->delete();
+        if ($curDate < $tomorrowDate) {
+            $antrianBesokLoketA = Antrian::select('nomorAntri')->where('loket', 'A')->whereDate('diambil', $tomorrowDate)->orderBy('created_at', 'DESC')->value('nomorAntri');
+            if (is_null($antrianBesokLoketA)) {
+                $antrianBesokLoketA = 0;
+            }
+            $antrianBesokLoketB = Antrian::select('nomorAntri')->where('loket', 'B')->whereDate('diambil', $tomorrowDate)->orderBy('created_at', 'DESC')->value('nomorAntri');
+            if (is_null($antrianBesokLoketB)) {
+                $antrianBesokLoketB = 0;
+            }
+            $antrianBesokLoketC = Antrian::select('nomorAntri')->where('loket', 'C')->whereDate('diambil', $tomorrowDate)->orderBy('created_at', 'DESC')->value('nomorAntri');
+            if (is_null($antrianBesokLoketC)) {
+                $antrianBesokLoketC = 0;
+            }
+            $antrianBesokLoketD = Antrian::select('nomorAntri')->where('loket', 'D')->whereDate('diambil', $tomorrowDate)->orderBy('created_at', 'DESC')->value('nomorAntri');
+            if (is_null($antrianBesokLoketD)) {
+                $antrianBesokLoketD = 0;
+            }
+            $antrianBesokLoketE = Antrian::select('nomorAntri')->where('loket', 'E')->whereDate('diambil', $tomorrowDate)->orderBy('created_at', 'DESC')->value('nomorAntri');
+            if (is_null($antrianBesokLoketE)) {
+                $antrianBesokLoketE = 0;
+            }
+            $antrianBesokLoketF = Antrian::select('nomorAntri')->where('loket', 'F')->whereDate('diambil', $tomorrowDate)->orderBy('created_at', 'DESC')->value('nomorAntri');
+            if (is_null($antrianBesokLoketF)) {
+                $antrianBesokLoketF = 0;
+            }
+            $antrianBesokLoketG = Antrian::select('nomorAntri')->where('loket', 'G')->whereDate('diambil', $tomorrowDate)->orderBy('created_at', 'DESC')->value('nomorAntri');
+            if (is_null($antrianBesokLoketG)) {
+                $antrianBesokLoketG = 0;
+            }
+            $antrianBesokLoketH = Antrian::select('nomorAntri')->where('loket', 'H')->whereDate('diambil', $tomorrowDate)->orderBy('created_at', 'DESC')->value('nomorAntri');
+            if (is_null($antrianBesokLoketH)) {
+                $antrianBesokLoketH = 0;
+            }
+            $antrianBesokLoketI = Antrian::select('nomorAntri')->where('loket', 'I')->whereDate('diambil', $tomorrowDate)->orderBy('created_at', 'DESC')->value('nomorAntri');
+            if (is_null($antrianBesokLoketI)) {
+                $antrianBesokLoketI = 0;
+            }
+            $antrianBesokLoketJ = Antrian::select('nomorAntri')->where('loket', 'J')->whereDate('diambil', $tomorrowDate)->orderBy('created_at', 'DESC')->value('nomorAntri');
+            if (is_null($antrianBesokLoketJ)) {
+                $antrianBesokLoketJ = 0;
             }
         }
+        $data = [
+            'antrianA' => $antrianBesokLoketA,
+            'antrianB' => $antrianBesokLoketB,
+            'antrianC' => $antrianBesokLoketC,
+            'antrianD' => $antrianBesokLoketD,
+            'antrianE' => $antrianBesokLoketE,
+            'antrianF' => $antrianBesokLoketF,
+            'antrianG' => $antrianBesokLoketG,
+            'antrianH' => $antrianBesokLoketH,
+            'antrianI' => $antrianBesokLoketI,
+            'antrianJ' => $antrianBesokLoketJ,
+        ];
+        // if ($curDate < $tomorrowDate) {
+        // $ambilNik = DB::table('antrians')->whereDate('diambil', '<', $curDate)->pluck('pengunjung_nik')->all();
+        // $deleted = DB::table('pengunjungs')->whereIn('nik', $ambilNik)->delete();
+        // $ambilPengunjung = Pengunjung::pluck('nik')->all();
+        // foreach ($ambilPengunjung as $k => $val) {
+        //     $cekAntrian = DB::table('antrians')->where('pengunjung_nik', $val)->first();
+        //     if (empty($cekAntrian)) {
+        //         DB::table('pengunjungs')->where('nik', $val)->delete();
+        //     }
+        // }
         // print_r($ambilPengunjung);
-        return response()->json(200);
+        return response()->json($data, 200);
         // }
     }
     public function cekAntrian(Request $request)

@@ -24,34 +24,34 @@ function capture() {
 const btn = document.querySelector("#cetak");
 btn.addEventListener("click", capture);
 
-function inputPengunjung() {
-  getNik = $("#nik").val();
-  getNama = $("#nama").val();
-  console.log(getNik);
-  $.ajax({
-    headers: {
-      "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
-    },
-    method: "POST",
-    url: "./pengunjung/tambah",
-    dataType: "json",
-    data: {
-      nik: $("#nik").val(),
-      nama: $("#nama").val(),
-    },
-    success: function (data) {
-      $("#nik").val("");
-      $("#nama").val("");
-    },
-    error: function (data) {
-      $("#inputan-pengunjung").show();
-      $("#tanggalInput").hide();
-      setErrorFor(nik, "");
-      setErrorFor(nama, "");
-      contoh();
-    },
-  });
-}
+// function inputPengunjung() {
+//   getNik = $("#nik").val();
+//   getNama = $("#nama").val();
+//   console.log(getNik);
+//   $.ajax({
+//     headers: {
+//       "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+//     },
+//     method: "POST",
+//     url: "./pengunjung/tambah",
+//     dataType: "json",
+//     data: {
+//       nik: $("#nik").val(),
+//       nama: $("#nama").val(),
+//     },
+//     success: function (data) {
+//       $("#nik").val("");
+//       $("#nama").val("");
+//     },
+//     error: function (data) {
+//       $("#inputan-pengunjung").show();
+//       $("#tanggalInput").hide();
+//       setErrorFor(nik, "");
+//       setErrorFor(nama, "");
+//       contoh();
+//     },
+//   });
+// }
 
 var pilihLayanan = "";
 function ambilButton(val) {
@@ -85,7 +85,8 @@ function masukkan() {
   const form = document.getElementById("form");
   const inputanPengunjung = document.getElementById("inputan-pengunjung");
   const tanggal = document.getElementById("tanggalInput");
-
+  getNik = $("#nik").val();
+  getNama = $("#nama").val();
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     e.stopImmediatePropagation();
@@ -116,7 +117,7 @@ function masukkan() {
     }
 
     if (nik.value.length === 16 && namaValue != "") {
-      inputPengunjung();
+      // inputPengunjung();
       inputanPengunjung.style.display = "none";
       tanggal.style.display = "block";
     }
@@ -248,6 +249,7 @@ function inputTanggal() {
     dataType: "json",
     data: {
       nik: getNik,
+      nama: getNama,
       tanggal: $("#datepicker").val(),
       loket: pilihLayanan,
       status: 0,
