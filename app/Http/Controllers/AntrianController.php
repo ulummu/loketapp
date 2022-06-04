@@ -176,16 +176,16 @@ class AntrianController extends Controller
             'antrianI' => $antrianBesokLoketI,
             'antrianJ' => $antrianBesokLoketJ,
         ];
-        // if ($curDate < $tomorrowDate) {
-        // $ambilNik = DB::table('antrians')->whereDate('diambil', '<', $curDate)->pluck('pengunjung_nik')->all();
-        // $deleted = DB::table('pengunjungs')->whereIn('nik', $ambilNik)->delete();
-        // $ambilPengunjung = Pengunjung::pluck('nik')->all();
-        // foreach ($ambilPengunjung as $k => $val) {
-        //     $cekAntrian = DB::table('antrians')->where('pengunjung_nik', $val)->first();
-        //     if (empty($cekAntrian)) {
-        //         DB::table('pengunjungs')->where('nik', $val)->delete();
-        //     }
-        // }
+        if ($curDate < $tomorrowDate) {
+            $ambilNik = DB::table('antrians')->whereDate('diambil', '<', $curDate)->pluck('pengunjung_nik')->all();
+            $deleted = DB::table('pengunjungs')->whereIn('nik', $ambilNik)->delete();
+            // $ambilPengunjung = Pengunjung::pluck('nik')->all();
+            // foreach ($ambilPengunjung as $k => $val) {
+            //     $cekAntrian = DB::table('antrians')->where('pengunjung_nik', $val)->first();
+            //     if (empty($cekAntrian)) {
+            //         DB::table('pengunjungs')->where('nik', $val)->delete();
+            //     }
+        }
         // print_r($ambilPengunjung);
         return response()->json($data, 200);
         // }
