@@ -1,6 +1,5 @@
 var pilihLayanan = "";
 var loket = "";
-var ngawur = "";
 
 function clearTable() {
   document.getElementById("tbody").innerHTML = "";
@@ -21,11 +20,22 @@ function ambilData(val) {
   }
   $("#dataDisplay tbody").empty();
 
-  dataTabel();
+  dataTable();
   y.innerText = "Loket " + pilihLayanan;
 }
 // var nik;
-function dataTabel() {
+function dataPanggil() {
+  if ($.fn.DataTable.isDataTable("#dataDisplay")) {
+    $("#dataDisplay").DataTable().destroy();
+  }
+  $("#dataDisplay tbody").empty();
+  dataTable();
+}
+function dataTable() {
+  if ($.fn.DataTable.isDataTable("#dataDisplay")) {
+    $("#dataDisplay").DataTable().destroy();
+  }
+  $("#dataDisplay tbody").empty();
   var table = $("#dataDisplay").DataTable({
     lengthChange: false,
     searching: false,
@@ -75,11 +85,92 @@ function dataTabel() {
               ')">Proses</button>';
           }
           // jika data "status = 1"
+          // else if (data["status"] === 1) {
+          //   // tampilkan button ulangi panggilan
+          //   var btn =
+          //     '<button type="button" class="btn btn-secondary me-2" disabled id="panggil"><i class="bi bi-volume-up-fill"></i></button>' +
+          //     '<button type="button" class="btn btn-success" id="proses">Proses</button>' +
+          //     '<i class="d-inline bi bi-check-lg ms-2 fs-6" style="color:green; display:block;" id="checkProses"> sudah diproses</i>';
+          // }
+          return btn;
+        },
+      },
+    ],
+    order: [
+      [3, "asc"], // urutkan data berdasarkan "no_antrian" secara descending
+    ],
+    iDisplayLength: 100, // tampilkan 10 data per halaman
+  });
+  setInterval(function () {
+    $("#dataDisplay").DataTable().ajax.reload();
+  }, 10000);
+}
+
+function selesai() {
+  $(".nav li a").click(function (e) {
+    // e.stopPropagation();
+    e.preventDefault();
+    $(".nav li a.active").removeClass("active");
+    $(this).addClass("active");
+  });
+  if ($.fn.DataTable.isDataTable("#dataDisplay")) {
+    $("#dataDisplay").DataTable().destroy();
+  }
+  $("#dataDisplay tbody").empty();
+  var table = $("#dataDisplay").DataTable({
+    lengthChange: false,
+    searching: false,
+    // processing: true,
+    serverSide: true,
+    // destroy: true,
+    ajax: "./dashboard/data/selesai/" + pilihLayanan,
+    columns: [
+      {
+        data: "pengunjung_nik",
+      },
+      {
+        data: "pengunjung.nama",
+      },
+      {
+        data: "loket",
+      },
+      {
+        data: "nomorAntri",
+      },
+      {
+        data: "status",
+        visible: false,
+      },
+      {
+        data: null,
+        orderable: false,
+        searchable: false,
+        // width: "100px",
+        // className: "text-center",
+        render: function (data, type, row) {
+          // jika tidak ada data "status"
+          // console.log(row.pengunjung_nik);
+          if (data["status"] === "") {
+            // sembunyikan button panggil
+            var btn = "-";
+          }
+          // jika data "status = 0"
+          // else if (row.status === 0) {
+          //   //   // tampilkan button panggil
+          //   var btn =
+          //     '<button type="button" class="btn btn-primary me-2" id="panggil" onclick="panggil(' +
+          //     row.pengunjung_nik +
+          //     ')"><i class="bi bi-volume-up-fill"></i></button>' +
+          //     '<button type="button" class="btn btn-success" onclick="proses(' +
+          //     row.pengunjung_nik +
+          //     ')">Proses</button>';
+          // }
+          // jika data "status = 1"
           else if (data["status"] === 1) {
             // tampilkan button ulangi panggilan
             var btn =
-              '<button type="button" class="btn btn-secondary me-2" disabled id="panggil"><i class="bi bi-volume-up-fill"></i></button>' +
-              '<button type="button" class="btn btn-success" id="proses">Proses</button>' +
+              // '<button type="button" class="btn btn-secondary me-2" disabled id="panggil"><i class="bi bi-volume-up-fill"></i></button>' +
+              // '<button type="button" class="btn btn-success" id="proses">Proses</button>' +
               '<i class="d-inline bi bi-check-lg ms-2 fs-6" style="color:green; display:block;" id="checkProses"> sudah diproses</i>';
           }
           return btn;

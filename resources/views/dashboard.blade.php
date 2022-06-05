@@ -126,6 +126,14 @@
         </div>
         <div id="tabelData" style="display: none">
           <h2 id="judulTabel" class="mt-3"></h2>
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" onclick="dataPanggil()">Panggil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="selesai()">Selesai</a>
+            </li>
+          </ul>
           <div class="table-responsive">
             <table class="table display table-hover table-sm" id="dataDisplay" style="width:100%">
               <thead>
