@@ -126,12 +126,12 @@
         </div>
         <div id="tabelData" style="display: none">
           <h2 id="judulTabel" class="mt-3"></h2>
-          <ul class="nav nav-tabs">
+          <ul class="nav nav-tabs mt-3">
             <li class="nav-item">
-              <a class="nav-link active" onclick="dataPanggil()">Panggil</a>
+              <a class="nav-link tab active" data-bs-toggle="tab" onclick="dataPanggil()">Panggil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" onclick="selesai()">Selesai</a>
+              <a class="nav-link" data-bs-toggle="tab" onclick="selesai()">Selesai</a>
             </li>
           </ul>
           <div class="table-responsive">

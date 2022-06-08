@@ -19,7 +19,8 @@ function ambilData(val) {
     $("#dataDisplay").DataTable().destroy();
   }
   $("#dataDisplay tbody").empty();
-
+  $(".active").removeClass("active");
+  $(".nav li a.tab").addClass("active");
   dataTable();
   y.innerText = "Loket " + pilihLayanan;
 }
@@ -107,12 +108,6 @@ function dataTable() {
 }
 
 function selesai() {
-  $(".nav li a").click(function (e) {
-    // e.stopPropagation();
-    e.preventDefault();
-    $(".nav li a.active").removeClass("active");
-    $(this).addClass("active");
-  });
   if ($.fn.DataTable.isDataTable("#dataDisplay")) {
     $("#dataDisplay").DataTable().destroy();
   }
@@ -153,20 +148,7 @@ function selesai() {
           if (data["status"] === "") {
             // sembunyikan button panggil
             var btn = "-";
-          }
-          // jika data "status = 0"
-          // else if (row.status === 0) {
-          //   //   // tampilkan button panggil
-          //   var btn =
-          //     '<button type="button" class="btn btn-primary me-2" id="panggil" onclick="panggil(' +
-          //     row.pengunjung_nik +
-          //     ')"><i class="bi bi-volume-up-fill"></i></button>' +
-          //     '<button type="button" class="btn btn-success" onclick="proses(' +
-          //     row.pengunjung_nik +
-          //     ')">Proses</button>';
-          // }
-          // jika data "status = 1"
-          else if (data["status"] === 1) {
+          } else if (data["status"] === 1) {
             // tampilkan button ulangi panggilan
             var btn =
               // '<button type="button" class="btn btn-secondary me-2" disabled id="panggil"><i class="bi bi-volume-up-fill"></i></button>' +
