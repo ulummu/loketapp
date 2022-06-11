@@ -3,7 +3,7 @@
     
 <head>
   <!-- Custom styles for this template -->
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <audio id="tingtung" src="../tingtung.mp3"></audio>
 </head>
 <body>
@@ -65,7 +65,7 @@
               </a>
             </li>
             <li class="nav-item mb-3">
-              <a class="nav-link" aria-current="page" href="javascript:void(0)" onclick="ambilData(this)" value="G">
+              <a class="nav-link" href="javascript:void(0)" onclick="ambilData(this)" value="G">
                 <span data-feather="home"></span>
                 Loket G
               </a>

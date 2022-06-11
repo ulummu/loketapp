@@ -78,9 +78,11 @@ function dataTable() {
           else if (row.status === 0) {
             //   // tampilkan button panggil
             var btn =
-              '<button type="button" class="btn btn-primary me-2" id="panggil" onclick="panggil(' +
+              '<button type="button" class="btn btn-primary me-2" id="panggil' +
               row.pengunjung_nik +
-              ')"><i class="bi bi-volume-up-fill"></i></button>' +
+              '" onclick="panggil(' +
+              row.pengunjung_nik +
+              ')"><i id="iconPanggil" class="bi bi-volume-up-fill"></i></button>' +
               '<button type="button" class="btn btn-success" onclick="proses(' +
               row.pengunjung_nik +
               ')">Proses</button>';
@@ -190,6 +192,13 @@ function panggil(nik) {
     url: "./dashboard/data/panggil",
     data: {
       nik: nik,
+    },
+    success: function () {
+      // $("#iconLoading").show();
+      $("#panggil" + nik)
+        .find("i")
+        .removeClass("bi bi-volume-up-fill")
+        .addClass("fa fa-circle-o-notch fa-spin");
     },
   });
 }
@@ -304,3 +313,5 @@ $(document).ready(function () {
     }, durasi_bell);
   });
 });
+
+// fa fa-circle-o-notch fa-spin
