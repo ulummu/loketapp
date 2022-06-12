@@ -89,8 +89,10 @@ class LoketController extends Controller
 
     public function store(Request $request)
     {
-        $data = pengunjung::create($request->all());
-        return response()->json($data, 200);
+        $data = Antrian::where('pengunjung_nik', $request->nik)->first();
+        if (is_null($data)) {
+            return response()->json(500);
+        }
     }
 
     public function show()

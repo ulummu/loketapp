@@ -24,34 +24,35 @@ function capture() {
 const btn = document.querySelector("#cetak");
 btn.addEventListener("click", capture);
 
-// function inputPengunjung() {
-//   getNik = $("#nik").val();
-//   getNama = $("#nama").val();
-//   console.log(getNik);
-//   $.ajax({
-//     headers: {
-//       "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
-//     },
-//     method: "POST",
-//     url: "./pengunjung/tambah",
-//     dataType: "json",
-//     data: {
-//       nik: $("#nik").val(),
-//       nama: $("#nama").val(),
-//     },
-//     success: function (data) {
-//       $("#nik").val("");
-//       $("#nama").val("");
-//     },
-//     error: function (data) {
-//       $("#inputan-pengunjung").show();
-//       $("#tanggalInput").hide();
-//       setErrorFor(nik, "");
-//       setErrorFor(nama, "");
-//       contoh();
-//     },
-//   });
-// }
+function inputPengunjung() {
+  getNik = $("#nik").val();
+  getNama = $("#nama").val();
+  console.log(getNik);
+  $.ajax({
+    headers: {
+      "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+    },
+    method: "get",
+    url: "./pengunjung/tambah",
+    dataType: "json",
+    data: {
+      nik: $("#nik").val(),
+      nama: $("#nama").val(),
+      loket: pilihLayanan,
+    },
+    success: function (data) {
+      $("#nik").val("");
+      $("#nama").val("");
+    },
+    error: function (data) {
+      $("#inputan-pengunjung").show();
+      $("#tanggalInput").hide();
+      setErrorFor(nik, "");
+      setErrorFor(nama, "");
+      contoh();
+    },
+  });
+}
 
 var pilihLayanan = "";
 function ambilButton(val) {
@@ -92,7 +93,7 @@ function masukkan() {
     e.stopImmediatePropagation();
 
     checkInputs();
-    // inputPengunjung();
+    inputPengunjung();
   });
 
   function checkInputs() {
@@ -117,7 +118,7 @@ function masukkan() {
     }
 
     if (nik.value.length === 16 && namaValue != "") {
-      // inputPengunjung();
+      inputPengunjung();
       inputanPengunjung.style.display = "none";
       tanggal.style.display = "block";
     }
@@ -474,7 +475,7 @@ function contoh() {
   swal({
     title: "Gagal!",
 
-    text: "NIK sudah memiliki antrian jika belum tunggu beberapa saat lagi",
+    text: "NIK sudah memiliki antrian",
 
     icon: "error",
   });
