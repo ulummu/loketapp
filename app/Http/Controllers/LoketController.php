@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Models\Antrian;
 use Illuminate\Http\Request;
 use App\Models\loket;
@@ -69,6 +70,11 @@ class LoketController extends Controller
             'antrianI' => $antrianBesokLoketI,
             'antrianJ' => $antrianBesokLoketJ,
         ];
+
+        if ($curDate < $tomorrowDate) {
+            $ambilNik = DB::table('antrians')->whereDate('diambil', '<', $curDate)->pluck('pengunjung_nik')->all();
+            $deleted = DB::table('pengunjungs')->whereIn('nik', $ambilNik)->delete();
+        }
         return view('loket', [
             "antrian" => $data
         ]);
