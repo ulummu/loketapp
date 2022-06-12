@@ -90,8 +90,10 @@ class LoketController extends Controller
     public function store(Request $request)
     {
         $data = Antrian::where('pengunjung_nik', $request->nik)->first();
-        if (is_null($data)) {
-            return response()->json(500);
+        if ($data !== null) {
+            return response()->json($data, 500);
+        } else {
+            return response()->json($data, 200);
         }
     }
 

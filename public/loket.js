@@ -38,9 +38,10 @@ function inputPengunjung() {
     data: {
       nik: $("#nik").val(),
       nama: $("#nama").val(),
-      loket: pilihLayanan,
+      // loket: pilihLayanan,
     },
     success: function (data) {
+      console.log(pilihLayanan);
       $("#nik").val("");
       $("#nama").val("");
     },
@@ -93,7 +94,6 @@ function masukkan() {
     e.stopImmediatePropagation();
 
     checkInputs();
-    inputPengunjung();
   });
 
   function checkInputs() {
