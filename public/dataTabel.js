@@ -181,6 +181,28 @@ function proses(nik) {
     data: {
       nik: nik,
     },
+    success: function (data) {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        // timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
+
+      Toast.fire({
+        icon: "success",
+        iconColor: "#fff",
+        color: "#fff",
+        background: "#A5DC86",
+        title:
+          "Nomor Antrian " + data.nomorAntri + data.loket + " sukses diproses",
+      });
+    },
   });
 }
 function panggil(nik) {

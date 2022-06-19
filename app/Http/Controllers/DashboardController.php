@@ -43,8 +43,15 @@ class DashboardController extends Controller
 
     public function update(Request $request)
     {
-        $data = Antrian::where('pengunjung_nik', $request->nik)->update(['status' => 1]);
+        $proses = Antrian::where('pengunjung_nik', $request->nik)->update(['status' => 1]);
+        $ambilData = Antrian::where('pengunjung_nik', $request->nik)->first();
         // $data->save();
+        // $data = [
+        //     'loket' => $proses->loket,
+        //     'nomorAntri' => $proses->nomorAntri,
+        // ];
+        return $ambilData;
+        // return response()->json($data, 200);
     }
     public function panggil(Request $request)
     {
