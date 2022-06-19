@@ -29,61 +29,61 @@
         <div class="position-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item mb-3">
-              <a class="nav-link" aria-current="page" href="javascript:void(0)" onclick="ambilData(this)" value="A">
+              <a class="nav-link A" href="javascript:void(0)" onclick="ambilData(this)" value="A">
                 <span data-feather="home"></span>
                 Loket A
               </a>
             </li>
             <li class="nav-item mb-3">
-              <a class="nav-link" href="javascript:void(0)" onclick="ambilData(this)" value="B">
+              <a class="nav-link B" href="javascript:void(0)" onclick="ambilData(this)" value="B">
                 <span data-feather="file"></span>
                 Loket B
               </a>
             </li>
             <li class="nav-item mb-3">
-              <a class="nav-link" href="javascript:void(0)" onclick="ambilData(this)" value="C">
+              <a class="nav-link C" href="javascript:void(0)" onclick="ambilData(this)" value="C">
                 <span data-feather="shopping-cart"></span>
                 Loket C
               </a>
             </li>
             <li class="nav-item mb-3">
-              <a class="nav-link" href="javascript:void(0)" onclick="ambilData(this)" value="D">
+              <a class="nav-link D" href="javascript:void(0)" onclick="ambilData(this)" value="D">
                 <span data-feather="users"></span>
                 Loket D
               </a>
             </li>
             <li class="nav-item mb-3">
-              <a class="nav-link" href="javascript:void(0)" onclick="ambilData(this)" value="E">
+              <a class="nav-link E" href="javascript:void(0)" onclick="ambilData(this)" value="E">
                 <span data-feather="bar-chart-2"></span>
                 Loket E
               </a>
             </li>
             <li class="nav-item mb-3">
-              <a class="nav-link" href="javascript:void(0)" onclick="ambilData(this)" value="F">
+              <a class="nav-link F" href="javascript:void(0)" onclick="ambilData(this)" value="F">
                 <span data-feather="layers"></span>
                 Loket F
               </a>
             </li>
             <li class="nav-item mb-3">
-              <a class="nav-link" href="javascript:void(0)" onclick="ambilData(this)" value="G">
+              <a class="nav-link G" href="javascript:void(0)" onclick="ambilData(this)" value="G">
                 <span data-feather="home"></span>
                 Loket G
               </a>
             </li>
             <li class="nav-item mb-3">
-              <a class="nav-link" href="javascript:void(0)" onclick="ambilData(this)" value="H">
+              <a class="nav-link H" href="javascript:void(0)" onclick="ambilData(this)" value="H">
                 <span data-feather="file"></span>
                 Loket H
               </a>
             </li>
             <li class="nav-item mb-3">
-              <a class="nav-link" href="javascript:void(0)" onclick="ambilData(this)" value="I">
+              <a class="nav-link I" href="javascript:void(0)" onclick="ambilData(this)" value="I">
                 <span data-feather="shopping-cart"></span>
                 Loket I
               </a>
             </li>
             <li class="nav-item mb-3 ">
-              <a class="nav-link border-bottom border-3" href="javascript:void(0)" onclick="ambilData(this)" value="J">
+              <a class="nav-link border-bottom border-3 J" href="javascript:void(0)" onclick="ambilData(this)" value="J">
                 <span data-feather="users"></span>
                 Loket J
               </a>

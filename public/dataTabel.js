@@ -7,6 +7,8 @@ function clearTable() {
 function ambilData(val) {
   // console.log(val);
   pilihLayanan = val.getAttribute("value");
+  $(".nav li a").removeClass("active");
+  $(".nav li a." + pilihLayanan).addClass("active");
   console.log(pilihLayanan);
   var w = document.getElementById("titleDashboard");
   var x = document.getElementById("tabelData");
@@ -19,8 +21,8 @@ function ambilData(val) {
     $("#dataDisplay").DataTable().destroy();
   }
   $("#dataDisplay tbody").empty();
-  $(".active").removeClass("active");
-  $(".nav li a.tab").addClass("active");
+  $(".nav-tabs li a.active").removeClass("active");
+  $(".nav-tabs li a.tab").addClass("active");
   dataTable();
   y.innerText = "Loket " + pilihLayanan;
 }
